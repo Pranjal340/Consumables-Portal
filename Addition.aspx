@@ -93,7 +93,7 @@
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-primary btn-block " ID="Button1" runat="server" Text="ADD" />
+                                    <asp:Button class="btn btn-primary btn-block " ID="Button1" runat="server" Text="ADD" OnClick="Button1_Click" />
                                 </div>
                             </div>
                             <div class="col-md-2">
