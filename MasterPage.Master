@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="ConsumablesPortal.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+            <%-- bootstrap css --%>
+            <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+            <%-- datatables css --%>
+            <link href="datatables/css/dataTables.dataTables.min.css" rel="stylesheet" />
+            <%-- fontawesome css --%>
+            <link href="fontawesome/css/all.css" rel="stylesheet" />
+
+            <%-- jquery original --%>
+            <script src="jQuery/jquery-3.6.0.min.js"></script>
+            <%-- jquery --%>
+            <script src="Bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+            <%-- popper --%>
+            <script src="Bootstrap/js/popper.min.js"></script>
+            <%-- bootstrap js --%>
+            <script src="Bootstrap/js/bootstrap.min.js"></script>
+            <%-- datables js --%>
+            <script src="datatables/js/dataTables.min.js"></script>
+            <%-- fontawesome js --%>
+            <script src="fontawesome/js/all.js"></script>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="home.aspx">
+                        <img src="imgs/gail%20logo.png" width="30" height="30" />
+                        GAIL (India) Limited
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="home.aspx">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="Addition.aspx">Addition</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="Issue.aspx">Issue</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="Return.aspx">Return</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Report</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Summary</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+            </nav>
+        </div>
+        
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="container-fluid">
+            <footer class="py-3 my-4 ">
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item"><a href="home.aspx" class="nav-link px-2 text-body-secondary">Home</a></li>
+                    <li class="nav-item"><a href="Addition.aspx" class="nav-link px-2 text-body-secondary">Add</a></li>
+                    <li class="nav-item"><a href="Issue.aspx" class="nav-link px-2 text-body-secondary">Issue</a></li>
+                    <li class="nav-item"><a href="Return.aspx" class="nav-link px-2 text-body-secondary">Return</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Report</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Summary</a></li>
+                </ul>
+                <p class="text-center text-body-secondary">@ 2024 Company, Inc</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
