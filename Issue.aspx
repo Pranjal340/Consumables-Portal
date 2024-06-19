@@ -15,9 +15,10 @@
                 2. hardcodeing of ddl
                 3. Location ko database se connect karna hai ?? 
                 !! database ki jagah location ko "type" ya "hardcode" karna zyada accha nhai hoga !!
+                4. Validation Controls
 
             Backend:
-                1. PK -> Item Name + Item Make + Item model 
+                DONE!! - 1. PK -> Item Name + Item Make + Item model 
                 2. Make and Model if not selected then take a value by default as it is a primary key
                 3. Location mandatory karna chahiye ya nahi
                 4. Cause to optional hoga hi
@@ -25,7 +26,7 @@
     --%>
 
 
-    <div class="container">
+    <div class="container">  
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <div class="card">
@@ -90,12 +91,13 @@
                                 <label>Quantity</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" TextMode="Number" placeholder="Quantity"></asp:TextBox>
+                                    <asp:Label ID="ErrorMessage" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label>Location</label>
                                 <div class="form-group">
-                                    <asp:DropDownList CssClass="form-control" ID="DropDownList2" runat="server" AutoPostBack="True" ></asp:DropDownList>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" TextMode="SingleLine" placeholder="Location"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -103,14 +105,14 @@
                             <div class="col-md-6">
                                 <label>Cause</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" TextMode="MultiLine" placeholder="Reason..."></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" TextMode="MultiLine" placeholder="Reason..."></asp:TextBox>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-primary btn-block " ID="Button1" runat="server" Text="ISSUE" />
+                                    <asp:Button class="btn btn-primary btn-block " ID="Button1" runat="server" Text="ISSUE" OnClick="Button1_Click" />
                                 </div>
                             </div>
                             <div class="col-md-2">

@@ -60,13 +60,13 @@ namespace ConsumablesPortal
         protected global::System.Web.UI.WebControls.TextBox TextBox4;
 
         /// <summary>
-        /// DropDownList2 control.
+        /// ErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.Label ErrorMessage;
 
         /// <summary>
         /// TextBox5 control.
@@ -76,6 +76,15 @@ namespace ConsumablesPortal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox5;
+
+        /// <summary>
+        /// TextBox6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox6;
 
         /// <summary>
         /// Button1 control.
