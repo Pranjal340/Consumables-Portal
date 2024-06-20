@@ -58,10 +58,7 @@
                                 <a class="nav-link active" href="Return.aspx">Return</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Report</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">Summary</a>
+                                <a class="nav-link active" href="report.aspx">Report</a>
                             </li>
                         </ul>
                     </div>
@@ -81,8 +78,7 @@
                     <li class="nav-item"><a href="Addition.aspx" class="nav-link px-2 text-body-secondary">Add</a></li>
                     <li class="nav-item"><a href="Issue.aspx" class="nav-link px-2 text-body-secondary">Issue</a></li>
                     <li class="nav-item"><a href="Return.aspx" class="nav-link px-2 text-body-secondary">Return</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Report</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Summary</a></li>
+                    <li class="nav-item"><a href="report.aspx" class="nav-link px-2 text-body-secondary">Report</a></li>
                 </ul>
                 <p class="text-center text-body-secondary">@ 2024 Company, Inc</p>
             </footer>

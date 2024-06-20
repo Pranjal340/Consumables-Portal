@@ -2160,6 +2160,7 @@
     <Content Include="imgs\generaluser.png" />
     <Content Include="Issue.aspx" />
     <Content Include="jQuery\jquery-3.6.0.min.js" />
+    <Content Include="report.aspx" />
     <Content Include="Return.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -2193,6 +2194,13 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="report.aspx.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report.aspx.designer.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Return.aspx.cs">
       <DependentUpon>Return.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
