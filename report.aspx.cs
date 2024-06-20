@@ -27,12 +27,10 @@ namespace ConsumablesPortal
             }
 
             /*
-            
             THIS CODE IS LESS OPTIMISED
 
             if(!IsPostBack)
             {
-
                 //string query = "SELECT * FROM item i JOIN users u ON i.item_name = u.item_name AND i.item_make = u.item_make AND i.item_model = u.item_model ";
                 string query = "SELECT i.item_name,i.item_make,i.item_model,i.total_qty,u.EID,u.process,u.edit_qty,u.edit_date,u.loc,u.cause FROM item i JOIN users u ON i.item_name = u.item_name AND i.item_make = u.item_make AND i.item_model = u.item_model ";
                 DataTable dt = new DataTable();
@@ -44,7 +42,6 @@ namespace ConsumablesPortal
                     GridView1.DataSource = dt;
                     GridView1.DataBind();
                 }
-
             }
             */
         }
@@ -78,6 +75,42 @@ namespace ConsumablesPortal
                 }
             }
             return dt;
+        }
+
+        protected void btnFilter_Click(object sender, EventArgs e)
+        {
+            DateTime startDate;
+            DateTime endDate;
+
+            if(DateTime.TryParse(txtStartDate.Text, out startDate) && DateTime.TryParse(txtEndDate.Text, out endDate))
+            {
+                DataTable filteredData = GetFilteredData(startDate, endDate);
+                GridView1.DataSource= filteredData;
+                GridView1.DataBind();
+            }
+            else
+            {
+                lblError.Text = "Please enter valid dates";
+                lblError.Visible = true;
+            }
+        }
+
+        public DataTable GetFilteredData(DateTime startDate, DateTime endDate)
+        {
+            string query = "SELECT i.item_name,i.item_make,i.item_model,i.total_qty,u.EID,u.process,u.edit_qty,u.edit_date,u.loc,u.cause FROM item i JOIN users u ON i.item_name = u.item_name AND i.item_make = u.item_make AND i.item_model = u.item_model WHERE edit_date BETWEEN @startDate AND @endDate ";
+            con.Open();
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@startDate",startDate);
+                cmd.Parameters.AddWithValue("@endDate",endDate);
+
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
         }
     }
 }
