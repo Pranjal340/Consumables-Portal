@@ -12,6 +12,18 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <%-- 
+    
+        To Do List:
+            Aim: DONE!!
+                
+            Frontend: DONE!!
+                
+            Backend: DONE!!
+                
+    --%>
+
+
     <div class="row mx-1 my-5 justify-content-center text-center">
         <div class="col-12">
             <i>
