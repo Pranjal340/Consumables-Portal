@@ -7,13 +7,13 @@
     
         To Do List:
             Aim:
-                1. Addition of data in database
-                2. Update the data in database
+                DONE!! - 1. Addition of data in database
+                DONE!! - 2. Update the data in database
 
             Frontend:
                 1. dropdown list main select option lana hai list ki jagah
                 2. hardcodeing of ddl
-                3. Validation Controls
+                DONE!! - 3. Validation Controls
 
             Backend:
                 DONE!! - 1.PK -> Item Name + Item Make + Item model 
