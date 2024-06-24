@@ -10,7 +10,6 @@
              background-repeat: no-repeat; /* Prevent the image from repeating */
              height: 100vh; /* Make sure the body height covers the viewport */
              margin: 0; /* Remove default margins */
-}
 
         }
     </style>
