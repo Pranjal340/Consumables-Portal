@@ -52,6 +52,9 @@
                                 <a class="nav-link active" href="Addition.aspx">Addition</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link active" href="Update.aspx">Update</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link active" href="Issue.aspx">Issue</a>
                             </li>
                             <li class="nav-item">
@@ -59,6 +62,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" href="report.aspx">Report</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="Total.aspx">Total Quantity</a>
                             </li>
                         </ul>
                     </div>
@@ -76,9 +82,11 @@
                 <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                     <li class="nav-item"><a href="home.aspx" class="nav-link px-2 text-body-secondary">Home</a></li>
                     <li class="nav-item"><a href="Addition.aspx" class="nav-link px-2 text-body-secondary">Add</a></li>
+                    <li class="nav-item"><a href="Update.aspx" class="nav-link px-2 text-body-secondary">Update</a></li>
                     <li class="nav-item"><a href="Issue.aspx" class="nav-link px-2 text-body-secondary">Issue</a></li>
                     <li class="nav-item"><a href="Return.aspx" class="nav-link px-2 text-body-secondary">Return</a></li>
                     <li class="nav-item"><a href="report.aspx" class="nav-link px-2 text-body-secondary">Report</a></li>
+                    <li class="nav-item"><a href="Total.aspx" class="nav-link px-2 text-body-secondary">Total Quantity</a></li>
                 </ul>
                 <p class="text-center text-body-secondary">@ 2024 Company, Inc</p>
             </footer>

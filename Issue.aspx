@@ -69,8 +69,8 @@
                             <div class="col-md-6">
                                 <label>Item Name</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" TextMode="SingleLine" placeholder="Item Name"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Mandatory" ControlToValidate="TextBox1" ForeColor="Red" ValidationGroup="Group1"></asp:RequiredFieldValidator>
+                                    <asp:DropDownList CssClass="form-control" ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" ></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Mandatory" ControlToValidate="DropDownList2" ForeColor="Red" ValidationGroup="Group1"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>
@@ -78,15 +78,15 @@
                             <div class="col-md-6">
                                 <label>Item Make</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" TextMode="SingleLine" placeholder="Item Make"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Mandatory" ControlToValidate="TextBox2" ForeColor="Red" ValidationGroup="Group1"></asp:RequiredFieldValidator>
+                                    <asp:DropDownList CssClass="form-control" ID="DropDownList3" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged" ></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Mandatory" ControlToValidate="DropDownList3" ForeColor="Red" ValidationGroup="Group1"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label>Item Model</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" TextMode="SingleLine" placeholder="Item Model"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Mandatory" ControlToValidate="TextBox3" ForeColor="Red" ValidationGroup="Group1"></asp:RequiredFieldValidator>
+                                    <asp:DropDownList CssClass="form-control" ID="DropDownList4" runat="server" AutoPostBack="true"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Mandatory" ControlToValidate="DropDownList4" ForeColor="Red" ValidationGroup="Group1"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-warning btn-block " ID="Button3" runat="server" Text="RESET" />
+                                    <asp:Button class="btn btn-warning btn-block " ID="Button3" runat="server" Text="RESET" OnClick="Button3_Click" />
                                 </div>
                             </div>
                         </div>

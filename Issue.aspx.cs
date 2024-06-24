@@ -17,23 +17,107 @@ namespace ConsumablesPortal
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                PopulateItemNames();
+            }
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        // Item Name DDL
+        private void PopulateItemNames()
+        {
+            string query = "SELECT DISTINCT item_name FROM item";
+
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                DropDownList2.DataSource = reader;
+                DropDownList2.DataTextField = "item_name";
+                DropDownList2.DataValueField = "item_name";
+                DropDownList2.DataBind();
+            }
+
+            DropDownList2.Items.Insert(0, new ListItem("--Select Item Name--", "")); // maybe "0"
+
+        }
+
+        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DropDownList2.SelectedValue != "") // maybe be "0"
+            {
+                PopulateItemMakes(DropDownList1.SelectedValue);
+            }
+            else
+            {
+                DropDownList3.Items.Clear();
+                DropDownList4.Items.Clear();
+            }
+        }
+
+        // Item Make DDL
+        private void PopulateItemMakes(string itemName)
+        {
+            string query = "SELECT DISTINCT item_make FROM item WHERE item_name = @item_name";
+
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@item_name", itemName);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                DropDownList3.DataSource = reader;
+                DropDownList3.DataTextField = "item_make";
+                DropDownList3.DataValueField = "item_make";
+                DropDownList3.DataBind();
+            }
+            DropDownList3.Items.Insert(0, new ListItem("--Select Item Make", ""));
+        }
+
+
+        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DropDownList3.SelectedValue != "")
+            {
+                PopulateItemModels(DropDownList1.SelectedValue, DropDownList2.SelectedValue);
+            }
+            else
+            {
+                DropDownList4.Items.Clear();
+            }
+        }
+
+        // Item Model DDL
+        private void PopulateItemModels(string itemName, string itemMake)
         {
 
+            string query = "SELECT DISTINCT item_model FROM item WHERE item_name = @item_name AND item_make = @item_make";
+
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@item_name", itemName);
+                cmd.Parameters.AddWithValue("@item_make", itemMake);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                DropDownList4.DataSource = reader;
+                DropDownList4.DataTextField = "item_model";
+                DropDownList4.DataValueField = "item_model";
+                DropDownList4.DataBind();
+            }
+            DropDownList4.Items.Insert(0, new ListItem("--Select Item Model--", ""));
+        }
+
+        // FOR ISSUE
+        protected void Button1_Click(object sender, EventArgs e)
+        {
             try
             {
-
                 con.Open();
                 Response.Write("Connection is OK !!!");
 
-
-
-                string item_name = TextBox1.Text;
-                string item_make = TextBox2.Text;
-                string item_model = TextBox3.Text;
+                string item_name = DropDownList2.SelectedValue;
+                string item_make = DropDownList3.SelectedValue;
+                string item_model = DropDownList4.SelectedValue;
                 int quantityToRemove;
                 if (!int.TryParse(TextBox4.Text, out quantityToRemove))
                 {
@@ -119,9 +203,9 @@ namespace ConsumablesPortal
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO users (EID, item_name, item_make, item_model, process, edit_qty, edit_date, loc, cause) VALUES (@EID, @item_name, @item_make, @item_model, @process, @edit_qty, @edit_date, @loc, @cause)", con);
                 cmd.Parameters.AddWithValue("@EID", DropDownList1.SelectedValue);
-                cmd.Parameters.AddWithValue("@item_name", TextBox1.Text);
-                cmd.Parameters.AddWithValue("@item_make", TextBox2.Text);
-                cmd.Parameters.AddWithValue("@item_model", TextBox3.Text);
+                cmd.Parameters.AddWithValue("@item_name", DropDownList2.SelectedValue);
+                cmd.Parameters.AddWithValue("@item_make", DropDownList3.SelectedValue);
+                cmd.Parameters.AddWithValue("@item_model", DropDownList4.SelectedValue);
                 cmd.Parameters.AddWithValue("@process", "Issue");       // Specific value for process
                 cmd.Parameters.AddWithValue("@edit_qty", TextBox4.Text);
                 cmd.Parameters.AddWithValue("@edit_date", DateTime.Now);   // Current date
@@ -141,6 +225,12 @@ namespace ConsumablesPortal
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ScriptKey", "alert('ERROR!! Form NOT Sumbitted');window.location='home.aspx'; ", true);
             }
 
+        }
+
+        // FOR RESET
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            DropDownList1.SelectedValue = DropDownList2.SelectedValue = DropDownList3.SelectedValue = DropDownList4.SelectedValue = TextBox4.Text = TextBox5.Text = TextBox6.Text = "";
         }
     }
 }

@@ -2162,6 +2162,8 @@
     <Content Include="jQuery\jquery-3.6.0.min.js" />
     <Content Include="report.aspx" />
     <Content Include="Return.aspx" />
+    <Content Include="Total.aspx" />
+    <Content Include="Update.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2207,6 +2209,20 @@
     </Compile>
     <Compile Include="Return.aspx.designer.cs">
       <DependentUpon>Return.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Total.aspx.cs">
+      <DependentUpon>Total.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Total.aspx.designer.cs">
+      <DependentUpon>Total.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Update.aspx.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Update.aspx.designer.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -33,15 +33,18 @@
             </i>
         </div>
     </div>
-    <div style="width:90%; margin:auto;">
-        <div class="container-fluid text-center py-2" style="margin:auto;">
-            <asp:Label ID="Label11" runat="server" Text="Start Date"></asp:Label>
-            <asp:TextBox ID="txtStartDate" runat="server" TextMode="Date"></asp:TextBox>
-            <asp:Label ID="Label12" runat="server" Text="End Date"></asp:Label>
-            <asp:TextBox ID="txtEndDate" runat="server" TextMode="Date"></asp:TextBox>
-            <asp:Button ID="btnFilter" runat="server" Text="Filter" OnClick="btnFilter_Click" />
-            <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red" Visible="False"></asp:Label>
-        </div>
+
+    <div class="container-fluid text-center py-2" style="margin:auto;">
+        <asp:Label ID="Label11" runat="server" Text="Start Date"></asp:Label>
+        <asp:TextBox ID="txtStartDate" runat="server" TextMode="Date"></asp:TextBox>
+        <asp:Label ID="Label12" runat="server" Text="End Date"></asp:Label>
+        <asp:TextBox ID="txtEndDate" runat="server" TextMode="Date"></asp:TextBox>
+        <asp:Button ID="btnFilter" runat="server" Text="Filter" OnClick="btnFilter_Click" />
+        <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red" Visible="False"></asp:Label>
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center; height: auto">
+
         <asp:GridView class="table table-responsive table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="false">
             <Columns>
                 <asp:TemplateField HeaderText="Sr No." SortExpression="Sr No.">
