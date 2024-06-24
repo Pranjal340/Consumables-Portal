@@ -1,30 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Return.aspx.cs" Inherits="ConsumablesPortal.Return" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        body {
+            background-image: url('imgs/HaziraNew.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+            padding: 20px; /* Add some padding for better visual */
+            border-radius: 10px; /* Optional: rounded corners */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Optional: add some shadow for better visibility */
+            margin-top: 50px; /* Optional: add some top margin */
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <%-- 
-    
-        To Do List: 
-            Aim:
-                DONE!! - 1. Add the values to database
-
-            Frontend:
-                1. dropdown list main select option lana hai list ki jagah
-                2. hardcodeing of ddl
-                3. Location ko database se connect karna hai ?? 
-                !! database ki jagah location ko "type" ya "hardcode" karna zyada accha nhai hoga !!
-                DONE!! - 4. Validation Controls
-
-            Backend:
-                DONE - 1. PK -> Item Name + Item Make + Item model 
-                2. Make and Model if not selected then take a value by default as it is a primary key
-                DONE!! - 3. Location mandatory karna chahiye ya nahi
-
-
-    --%>
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-12 mx-auto">
@@ -63,8 +60,9 @@
                                         <asp:ListItem Text="a04" Value="a04"></asp:ListItem>
                                         <asp:ListItem Text="a05" Value="a05"></asp:ListItem>
                                     </asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DropDownList1" InitialValue="" ErrorMessage="Please select an option." ForeColor="Red" ValidationGroup="Group1"></asp:RequiredFieldValidator>                                </div>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DropDownList1" InitialValue="" ErrorMessage="Please select an option." ForeColor="Red" ValidationGroup="Group1"></asp:RequiredFieldValidator>
                                 </div>
+                            </div>
                             <div class="col-md-6">
                                 <label>Item Name</label>
                                 <div class="form-group">
@@ -109,12 +107,12 @@
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-primary btn-block " ID="Button1" runat="server" Text="RETURN" OnClick="Button1_Click" ValidationGroup="Group1" />
+                                    <asp:Button class="btn btn-primary btn-block" ID="Button1" runat="server" Text="RETURN" OnClick="Button1_Click" ValidationGroup="Group1" />
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-warning btn-block " ID="Button3" runat="server" Text="RESET" OnClick="Button3_Click" />
+                                    <asp:Button class="btn btn-warning btn-block" ID="Button3" runat="server" Text="RESET" OnClick="Button3_Click" />
                                 </div>
                             </div>
                         </div>
@@ -123,5 +121,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>

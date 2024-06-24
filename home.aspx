@@ -1,26 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="ConsumablesPortal.home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        main{
-            margin-left:auto;
-            margin-right:auto;
-            margin-top:125px;
-            margin-bottom:175px;
-            text-align:center;
-            width:50%;
-            
+        main {
+
+             background-image: url('imgs/HaziraNew.jpg');
+
+             background-size: cover; /* Ensure the image covers the entire background */
+             background-position: center; /* Center the image */
+             background-repeat: no-repeat; /* Prevent the image from repeating */
+             height: 100vh; /* Make sure the body height covers the viewport */
+             margin: 0; /* Remove default margins */
+}
+
         }
     </style>
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
     <main class="px-3">
-    <h1 >Cover your page.</h1>
-
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-dark fw-bold border-dark bg-dark">Learn more</a>
-    </p>
+    
+        
   </main>
         </div>
 
