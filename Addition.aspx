@@ -1,8 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Addition.aspx.cs" Inherits="ConsumablesPortal.Addition" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+   <style>
+    body {
+        background-image: url('imgs/HaziraNew.jpg'); /* Replace with your image path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .container {
+        background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+        padding: 20px; /* Add some padding for better visual */
+        border-radius: 10px; /* Optional: rounded corners */
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Optional: add some shadow for better visibility */
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <%-- 
     
         To Do List:
@@ -86,7 +101,7 @@
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-primary btn-block " ID="Button1" runat="server" Text="ADD" OnClick="Button1_Click" ValidationGroup="Group1" />
+                                    <asp:Button class="btn btn-primary btn-block" ID="Button1" runat="server" Text="ADD" OnClick="Button1_Click" ValidationGroup="Group1" />
                                 </div>
                             </div>
                             <div class="col-md-2">

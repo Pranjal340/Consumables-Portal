@@ -1,5 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Issue.aspx.cs" Inherits="ConsumablesPortal.Issue" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        body {
+            background-image: url('imgs/HaziraNew.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+            padding: 20px; /* Add some padding for better visual */
+            border-radius: 10px; /* Optional: rounded corners */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Optional: add some shadow for better visibility */
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -64,7 +80,8 @@
                                         <asp:ListItem Text="a04" Value="a04"></asp:ListItem>
                                         <asp:ListItem Text="a05" Value="a05"></asp:ListItem>
                                     </asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DropDownList1" InitialValue="" ErrorMessage="Please select an option." ForeColor="Red" ValidationGroup="Group1"></asp:RequiredFieldValidator>                                </div>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DropDownList1" InitialValue="" ErrorMessage="Please select an option." ForeColor="Red" ValidationGroup="Group1"></asp:RequiredFieldValidator>
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <label>Item Name</label>
@@ -118,7 +135,7 @@
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-primary btn-block " ID="Button1" runat="server" Text="ISSUE" OnClick="Button1_Click" ValidationGroup="Group1" />
+                                    <asp:Button class="btn btn-primary btn-block" ID="Button1" runat="server" Text="ISSUE" OnClick="Button1_Click" ValidationGroup="Group1" />
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -132,5 +149,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>

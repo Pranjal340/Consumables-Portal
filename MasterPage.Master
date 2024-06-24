@@ -28,6 +28,7 @@
 
 
     <asp:ContentPlaceHolder ID="head" runat="server">
+
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -88,7 +89,7 @@
                     <li class="nav-item"><a href="report.aspx" class="nav-link px-2 text-body-secondary">Report</a></li>
                     <li class="nav-item"><a href="Total.aspx" class="nav-link px-2 text-body-secondary">Total Quantity</a></li>
                 </ul>
-                <p class="text-center text-body-secondary">@ 2024 Company, Inc</p>
+                <p class="text-center text-body-secondary">GAIL (India) Limited. All Rights Reserved.</p>
             </footer>
         </div>
 
