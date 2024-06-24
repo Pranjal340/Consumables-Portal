@@ -1,29 +1,24 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Addition.aspx.cs" Inherits="ConsumablesPortal.Addition" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+   <style>
+    body {
+        background-image: url('imgs/HaziraNew.jpg'); /* Replace with your image path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .container {
+        background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+        padding: 20px; /* Add some padding for better visual */
+        border-radius: 10px; /* Optional: rounded corners */
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Optional: add some shadow for better visibility */
+    }
+</style>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <%-- 
-    
-        To Do List:
-            Aim:
-                DONE!! - 1. Addition of data in database
-                DONE!! - 2. Update the data in database
-
-            Frontend:
-                1. dropdown list main select option lana hai list ki jagah
-                2. hardcodeing of ddl
-                DONE!! - 3. Validation Controls
-
-            Backend:
-                DONE!! - 1.PK -> Item Name + Item Make + Item model 
-                2. Make and Model if not selected then take a value by default as it is a primary key
-                DONE!! - 3. seperate functionality of add and update button. addition cannot be performed on an item already in the database and vice versa
-                DONE!! - 4. Addition main same item name , make aur model daalne par exception lag jana chahiye 
-
-    --%>
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-12 mx-auto">
@@ -102,17 +97,17 @@
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-primary btn-block " ID="Button1" runat="server" Text="ADD" OnClick="Button1_Click" ValidationGroup="Group1" />
+                                    <asp:Button class="btn btn-primary btn-block" ID="Button1" runat="server" Text="ADD" OnClick="Button1_Click" ValidationGroup="Group1" />
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-secondary btn-block " ID="Button2" runat="server" Text="UPDATE" OnClick="Button2_Click" ValidationGroup="Group1" />
+                                    <asp:Button class="btn btn-secondary btn-block" ID="Button2" runat="server" Text="UPDATE" OnClick="Button2_Click" ValidationGroup="Group1" />
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-warning btn-block " ID="Button3" runat="server" Text="RESET" OnClick="Button3_Click" />
+                                    <asp:Button class="btn btn-warning btn-block" ID="Button3" runat="server" Text="RESET" OnClick="Button3_Click" />
                                 </div>
                             </div>
                         </div>
@@ -121,5 +116,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>
