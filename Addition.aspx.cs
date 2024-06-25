@@ -29,11 +29,11 @@ namespace ConsumablesPortal
             try
             {
                 con.Open();
-                Response.Write("Connection is OK !!!");
+
                 SqlCommand cmd = new SqlCommand("insert into item values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox4.Text + "')",con);
                 cmd.ExecuteNonQuery();
 
-                SqlCommand cmd2 = new SqlCommand("INSERT INTO users (EID, item_name, item_make, item_model, process, edit_qty, edit_date, loc, cause) VALUES (@EID, @item_name, @item_make, @item_model, @process, @edit_qty, @edit_date, @loc, @cause)", con);
+                SqlCommand cmd2 = new SqlCommand("INSERT INTO users (EID, item_name, item_make, item_model, process, edit_qty, edit_date, loc, cause, remain_qty) VALUES (@EID, @item_name, @item_make, @item_model, @process, @edit_qty, @edit_date, @loc, @cause, @remain_qty)", con);
                 cmd2.Parameters.AddWithValue("@EID", DBNull.Value);         //NULL value
                 cmd2.Parameters.AddWithValue("@item_name", TextBox1.Text);
                 cmd2.Parameters.AddWithValue("@item_make", TextBox2.Text);
@@ -43,8 +43,17 @@ namespace ConsumablesPortal
                 cmd2.Parameters.AddWithValue("@edit_date", DateTime.Now);   // Current date
                 cmd2.Parameters.AddWithValue("@loc", DBNull.Value);         // NULL value
                 cmd2.Parameters.AddWithValue("@cause", DBNull.Value);       // NULL value
-            
+                cmd2.Parameters.AddWithValue("@remain_qty", TextBox4.Text);
                 cmd2.ExecuteNonQuery();
+
+                SqlCommand cmd3 = new SqlCommand("INSERT INTO date_qty (item_name, item_make, item_model, today_date, today_qty) VALUES (@item_name, @item_make, @item_model, @today_date, @today_qty)", con);
+                cmd3.Parameters.AddWithValue("@item_name", TextBox1.Text);
+                cmd3.Parameters.AddWithValue("@item_make", TextBox2.Text);
+                cmd3.Parameters.AddWithValue("@item_model", TextBox3.Text);
+                cmd3.Parameters.AddWithValue("@today_date", DateTime.Now);   // Current date
+                cmd3.Parameters.AddWithValue("@today_qty",TextBox4.Text);  
+                cmd3.ExecuteNonQuery();
+
                 con.Close();
 
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ScriptKey", "alert('Item Added');window.location='home.aspx'; ", true);

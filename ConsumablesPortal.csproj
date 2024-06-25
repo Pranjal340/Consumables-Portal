@@ -72,6 +72,7 @@
     <Content Include="Bootstrap\js\popper.min.js" />
     <Content Include="datatables\css\dataTables.dataTables.min.css" />
     <Content Include="datatables\js\dataTables.min.js" />
+    <Content Include="DateQty.aspx" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
     <Content Include="fontawesome\css\brands.css" />
@@ -2173,6 +2174,13 @@
     </Compile>
     <Compile Include="Addition.aspx.designer.cs">
       <DependentUpon>Addition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DateQty.aspx.cs">
+      <DependentUpon>DateQty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DateQty.aspx.designer.cs">
+      <DependentUpon>DateQty.aspx</DependentUpon>
     </Compile>
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>

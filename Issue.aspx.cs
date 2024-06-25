@@ -47,7 +47,7 @@ namespace ConsumablesPortal
         {
             if (DropDownList2.SelectedValue != "") // maybe be "0"
             {
-                PopulateItemMakes(DropDownList1.SelectedValue);
+                PopulateItemMakes(DropDownList2.SelectedValue);
             }
             else
             {
@@ -79,7 +79,7 @@ namespace ConsumablesPortal
         {
             if (DropDownList3.SelectedValue != "")
             {
-                PopulateItemModels(DropDownList1.SelectedValue, DropDownList2.SelectedValue);
+                PopulateItemModels(DropDownList2.SelectedValue, DropDownList3.SelectedValue);
             }
             else
             {
@@ -148,7 +148,7 @@ namespace ConsumablesPortal
                         currentQuantity = Convert.ToInt32(result);
                         itemExists = Convert.ToInt32(result) > 0;
                     }
-                    else 
+                    else
                     {
 
                         //First this exception will be checked then next one
@@ -161,8 +161,8 @@ namespace ConsumablesPortal
                         return;
                     }
                 }
-                
-                if(!itemExists) 
+
+                if (!itemExists)
                 {
                     //Second expception to be checked if by chance first misses even though they both are essentially same
 
@@ -173,9 +173,9 @@ namespace ConsumablesPortal
 
                     return;
                 }
-                
 
-                if (currentQuantity < quantityToRemove) 
+
+                if (currentQuantity < quantityToRemove)
                 {
                     ErrorMessage.Text = "Issue Quantity is More than Available Quantity";
                     ErrorMessage.Visible = true;
@@ -201,7 +201,7 @@ namespace ConsumablesPortal
 
 
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO users (EID, item_name, item_make, item_model, process, edit_qty, edit_date, loc, cause) VALUES (@EID, @item_name, @item_make, @item_model, @process, @edit_qty, @edit_date, @loc, @cause)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO users (EID, item_name, item_make, item_model, process, edit_qty, edit_date, loc, cause, remain_qty) VALUES (@EID, @item_name, @item_make, @item_model, @process, @edit_qty, @edit_date, @loc, @cause, @remain_qty)", con);
                 cmd.Parameters.AddWithValue("@EID", DropDownList1.SelectedValue);
                 cmd.Parameters.AddWithValue("@item_name", DropDownList2.SelectedValue);
                 cmd.Parameters.AddWithValue("@item_make", DropDownList3.SelectedValue);
@@ -211,14 +211,72 @@ namespace ConsumablesPortal
                 cmd.Parameters.AddWithValue("@edit_date", DateTime.Now);   // Current date
                 cmd.Parameters.AddWithValue("@loc", TextBox5.Text);
                 cmd.Parameters.AddWithValue("@cause", TextBox6.Text);
-
+                cmd.Parameters.AddWithValue("@remain_qty", newQuantity);
                 cmd.ExecuteNonQuery();
 
 
-                con.Close();
+                string query2 = "UPDATE date_qty SET today_qty = @today_qty WHERE item_name = @item_name AND item_make = @item_make AND item_model = @item_model AND today_date = @today_date";
+                using (SqlCommand cmd2 = new SqlCommand(query2, con))
+                {
+                    cmd2.Parameters.AddWithValue("@item_name", DropDownList1.SelectedValue);
+                    cmd2.Parameters.AddWithValue("@item_make", DropDownList2.SelectedValue);
+                    cmd2.Parameters.AddWithValue("@item_model", DropDownList2.SelectedValue);
+                    cmd2.Parameters.AddWithValue("@today_date", DateTime.Now);   // Current date
+                    cmd2.Parameters.AddWithValue("@today_qty", newQuantity);
+                    cmd2.ExecuteNonQuery();
+                }
 
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ScriptKey", "alert('Item Issued');window.location='home.aspx'; ", true);
 
+
+                DateTime today_date = DateTime.Today;
+                string checkQuery = "SELECT COUNT(*) FROM date_qty WHERE item_name = @item_name AND item_make = @item_make AND item_model = @item_model AND today_date = @today_date";
+                using (SqlCommand checkCmd = new SqlCommand(checkQuery, con))
+                {
+                    checkCmd.Parameters.AddWithValue("@item_name", item_name);
+                    checkCmd.Parameters.AddWithValue("@item_make", item_make);
+                    checkCmd.Parameters.AddWithValue("@item_model", item_model);
+                    checkCmd.Parameters.AddWithValue("@today_date", today_date);
+
+                    int count = (int)checkCmd.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        // Update the existing entry
+                        string updateQuery2 = "UPDATE date_qty SET today_qty = @today_qty WHERE item_name = @item_name AND item_make = @item_make AND item_model = @item_model AND today_date = @today_date";
+                        using (SqlCommand updateCmd = new SqlCommand(updateQuery2, con))
+                        {
+                            updateCmd.Parameters.AddWithValue("@item_name", item_name);
+                            updateCmd.Parameters.AddWithValue("@item_make", item_make);
+                            updateCmd.Parameters.AddWithValue("@item_model", item_model);
+                            updateCmd.Parameters.AddWithValue("@today_date", today_date);
+                            updateCmd.Parameters.AddWithValue("@today_qty", newQuantity);
+
+                            updateCmd.ExecuteNonQuery();
+                        }
+                    }
+                    else
+                    {
+                        // Insert a new entry
+                        string insertQuery = "INSERT INTO date_qty (item_name, item_make, item_model, today_date, today_qty) VALUES (@item_name, @item_make, @item_model, @today_date, @today_qty)";
+                        using (SqlCommand insertCmd = new SqlCommand(insertQuery, con))
+                        {
+                            insertCmd.Parameters.AddWithValue("@item_name", item_name);
+                            insertCmd.Parameters.AddWithValue("@item_make", item_make);
+                            insertCmd.Parameters.AddWithValue("@item_model", item_model);
+                            insertCmd.Parameters.AddWithValue("@today_date", today_date);
+                            insertCmd.Parameters.AddWithValue("@today_qty", newQuantity);
+
+                            insertCmd.ExecuteNonQuery();
+                        }
+                    }
+
+
+
+                    con.Close();
+
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ScriptKey", "alert('Item Issued');window.location='home.aspx'; ", true);
+
+                }
             }
             catch (Exception ex)
             {

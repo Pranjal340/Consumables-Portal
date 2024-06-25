@@ -49,7 +49,7 @@ namespace ConsumablesPortal
         public DataTable GetData()
         {
             //string query = "SELECT * FROM item i JOIN users u ON i.item_name = u.item_name AND i.item_make = u.item_make AND i.item_model = u.item_model ";
-            string query = "SELECT i.item_name,i.item_make,i.item_model,i.total_qty,u.EID,u.process,u.edit_qty,u.edit_date,u.loc,u.cause FROM item i JOIN users u ON i.item_name = u.item_name AND i.item_make = u.item_make AND i.item_model = u.item_model ";
+            string query = "SELECT i.item_name,i.item_make,i.item_model,i.total_qty,u.EID,u.process,u.edit_qty,u.edit_date,u.loc,u.cause,u.remain_qty FROM item i JOIN users u ON i.item_name = u.item_name AND i.item_make = u.item_make AND i.item_model = u.item_model ";
             con.Open();
             using (SqlCommand cmd = new SqlCommand(query, con))
             {

@@ -67,19 +67,14 @@
                         <asp:Label ID="Label3" runat="server" Text='<%# Bind("item_model") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Employee ID" SortExpression="Employee ID">
-                    <ItemTemplate>
-                        <asp:Label ID="Label4" runat="server" Text='<%# Bind("EID") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
                 <asp:TemplateField HeaderText="Process" SortExpression="Process">
                     <ItemTemplate>
                         <asp:Label ID="Label5" runat="server" Text='<%# Bind("process") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Total Quantity" SortExpression="Total Quantity">
+                <asp:TemplateField HeaderText="Total after Process Quantity" SortExpression="Total after Process Quantity">
                     <ItemTemplate>
-                        <asp:Label ID="Label6" runat="server" Text='<%# Bind("total_qty") %>'></asp:Label>
+                        <asp:Label ID="Label6" runat="server" Text='<%# Bind("remain_qty") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Edit Quantity" SortExpression="Edit Quantity">
@@ -90,6 +85,11 @@
                 <asp:TemplateField HeaderText="Edit Date" SortExpression="Edit Date">
                     <ItemTemplate>
                         <asp:Label ID="Label8" runat="server" Text='<%# Bind("edit_date") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Employee ID" SortExpression="Employee ID">
+                    <ItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Bind("EID") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Location" SortExpression="Location">

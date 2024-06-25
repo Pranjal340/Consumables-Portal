@@ -67,6 +67,9 @@
                             <li class="nav-item">
                                 <a class="nav-link active" href="Total.aspx">Total Quantity</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="DateQty.aspx">Datewise Quantity</a>
+                            </li>
                         </ul>
                     </div>
                 </div>  
@@ -88,6 +91,7 @@
                     <li class="nav-item"><a href="Return.aspx" class="nav-link px-2 text-body-secondary">Return</a></li>
                     <li class="nav-item"><a href="report.aspx" class="nav-link px-2 text-body-secondary">Report</a></li>
                     <li class="nav-item"><a href="Total.aspx" class="nav-link px-2 text-body-secondary">Total Quantity</a></li>
+                    <li class="nav-item"><a href="DateQty.aspx" class="nav-link px-2 text-body-secondary">Datewise Quantity</a></li>
                 </ul>
                 <p class="text-center text-body-secondary">GAIL (India) Limited. All Rights Reserved.</p>
             </footer>
