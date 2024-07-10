@@ -18,7 +18,7 @@
         }
 
         .table {
-            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+            background-color: rgba(255, 255, 255, 1); /* Slightly transparent white background */
             padding: 20px; /* Add some padding for better visual */
             border-radius: 10px; /* Optional: rounded corners */
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Optional: add some shadow for better visibility */
@@ -47,7 +47,7 @@
         <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red" Visible="False"></asp:Label>
     </div>
 
-    <div style="display: flex; justify-content: center; align-items: center; height: auto">
+    <div style="display: flex; justify-content: center; align-items: center; height: auto" >
     
         <asp:GridView class="table table-responsive table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="false">
             <Columns>

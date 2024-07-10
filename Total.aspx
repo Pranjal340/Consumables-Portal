@@ -18,7 +18,7 @@
         }
 
         .table {
-            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+            background-color: rgba(255, 255, 255, 1); /* Slightly transparent white background */
             padding: 20px; /* Add some padding for better visual */
             border-radius: 10px; /* Optional: rounded corners */
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Optional: add some shadow for better visibility */
