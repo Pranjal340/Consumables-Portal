@@ -2,10 +2,15 @@
 
 ## Home Page
 <img width="494" alt="image" src="https://github.com/user-attachments/assets/ce63dbb1-dc78-4481-87be-2090dd41632b">
+
+
 ## Addtion Page
-![image](https://github.com/user-attachments/assets/e00e6f73-4e29-40df-8d7b-52c43d330606)
+<img width="503" alt="image" src="https://github.com/user-attachments/assets/a29c198b-134e-4427-8829-02a3d6e79d1f">
+
+
 ## Update Page
-![image](https://github.com/user-attachments/assets/a0b94f56-f0c7-4adf-93d7-4676c3f8fa5b)
+![image](https://github.com/user-attachments/assets/67f99c7e-5dff-454c-bf28-fa2596f3a585)
+
 ## Issue Page
 ![image](https://github.com/user-attachments/assets/a8274510-80c4-4d59-83fe-decd72abcff1)
 ## Return Page
